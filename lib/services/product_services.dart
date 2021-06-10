@@ -11,6 +11,14 @@ class ProductServices {
     return ApiResponse(value: products);
   }
 
+  static Future<ApiResponse<int>> count() async {
+    List<Product> products = await dbHelper.retrieve().then((value) {
+      return value.map((e) => Product.fromMap(e)).toList();
+    });
+
+    return ApiResponse(value: products.length);
+  }
+
   static Future<ApiResponse<bool>> insert(Product product) async {
     try {
       final id = await dbHelper.insert(product.toMap());

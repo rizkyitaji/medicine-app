@@ -15,7 +15,7 @@ class ProductListItem extends GetWidget<ProductController> {
           Container(
             color: green,
             padding: EdgeInsets.all(defMargin),
-            child: Text(product.code, style: whiteFont),
+            child: Text(product.id.toString(), style: whiteFont),
           ),
           SizedBox(width: 12),
           Expanded(

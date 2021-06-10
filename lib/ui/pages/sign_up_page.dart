@@ -93,7 +93,7 @@ class SignUpPage extends GetView<TextFieldController> {
         backgroundColor: green,
         duration: Duration(seconds: 2),
       );
-      Get.to(MainPage());
+      Get.off(MainPage());
     } else {
       Get.snackbar(
         'Register Failed',

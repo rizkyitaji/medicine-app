@@ -120,6 +120,7 @@ class _AddProductPageState extends State<AddProductPage> {
 
   void insert() async {
     bool result = await productController.insert(Product(
+      id: await productController.count() + 1,
       code: codeController.text.trim(),
       name: nameController.text,
       price: int.parse(priceController.text),
@@ -135,7 +136,7 @@ class _AddProductPageState extends State<AddProductPage> {
         backgroundColor: green,
         duration: Duration(seconds: 2),
       );
-      Get.to(MainPage());
+      Get.off(MainPage());
     } else {
       Get.snackbar(
         'Failed',
@@ -164,7 +165,7 @@ class _AddProductPageState extends State<AddProductPage> {
         backgroundColor: green,
         duration: Duration(seconds: 2),
       );
-      Get.to(MainPage());
+      Get.off(MainPage());
     } else {
       Get.snackbar(
         'Failed',

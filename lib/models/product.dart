@@ -11,7 +11,7 @@ class Product extends Equatable {
 
   factory Product.fromMap(Map<String, dynamic> data) {
     return Product(
-      id: data['id'],
+      id: data['_id'],
       code: data['code'],
       name: data['name'],
       price: data['price'],
@@ -21,6 +21,7 @@ class Product extends Equatable {
 
   Map<String, dynamic> toMap() {
     return {
+      '_id': this.id,
       'code': this.code,
       'name': this.name,
       'price': this.price,

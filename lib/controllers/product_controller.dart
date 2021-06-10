@@ -13,6 +13,16 @@ class ProductController extends GetxController {
     }
   }
 
+  Future<int> count() async {
+    ApiResponse<int> result = await ProductServices.count();
+
+    if (result != null) {
+      return result.value;
+    } else {
+      return null;
+    }
+  }
+
   Future<bool> insert(Product product) async {
     ApiResponse<bool> result = await ProductServices.insert(product);
 
