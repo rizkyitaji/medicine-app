@@ -22,8 +22,11 @@ class TextFieldController extends GetxController {
       update();
     } else if (tag == 'password' && controller.text.length < 6) {
       isValid = false;
-      message =
-          "Password must be at least 6 characters and contains alphanumeric";
+      message = "Password must be at least 6 characters";
+      update();
+    } else if (tag == 'password' && isAlphanumeric(controller.text)) {
+      isValid = false;
+      message = "Password must contains alphanumeric characters";
       update();
     } else if (tag == 'email' && !controller.text.contains('@')) {
       isValid = false;
@@ -33,5 +36,11 @@ class TextFieldController extends GetxController {
       isValid = true;
       update();
     }
+  }
+
+  bool isAlphanumeric(String text) {
+    var s = RegExp(r'^[a-zA-Z0-9]+$');
+
+    return s.hasMatch(text);
   }
 }

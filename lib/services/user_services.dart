@@ -24,6 +24,8 @@ class UserServices {
     }
 
     var data = jsonDecode(response.body);
+    print(data);
+
     User value = User.fromJson(data);
 
     return ApiResponse(value: value, message: 'Welcome');
@@ -52,6 +54,8 @@ class UserServices {
     }
 
     var data = jsonDecode(response.body);
+    print(data);
+
     User value = User.fromJson(data);
 
     return ApiResponse(value: value, message: 'Welcome');

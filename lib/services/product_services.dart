@@ -12,17 +12,14 @@ class ProductServices {
   }
 
   static Future<ApiResponse<int>> count() async {
-    List<Product> products = await dbHelper.retrieve().then((value) {
-      return value.map((e) => Product.fromMap(e)).toList();
-    });
+    var products = await ProductServices.getProducts();
 
-    return ApiResponse(value: products.length);
+    return ApiResponse(value: products.value.length);
   }
 
   static Future<ApiResponse<bool>> insert(Product product) async {
     try {
-      final id = await dbHelper.insert(product.toMap());
-      print(id);
+      await dbHelper.insert(product.toMap());
       return ApiResponse(value: true, message: 'Medicine added');
     } catch (e) {
       return ApiResponse(value: false, message: e);
@@ -31,8 +28,7 @@ class ProductServices {
 
   static Future<ApiResponse<bool>> update(Product product) async {
     try {
-      final id = await dbHelper.update(product.toMap());
-      print(id);
+      await dbHelper.update(product.toMap());
       return ApiResponse(value: true, message: 'Medicine updated');
     } catch (e) {
       return ApiResponse(value: false, message: e);
