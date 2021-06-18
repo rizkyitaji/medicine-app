@@ -39,9 +39,9 @@ class SignInPage extends GetView<TextFieldController> {
                     onTap: () {
                       if (usernameController.text.isEmpty) {
                         controller.validate(usernameController, "username");
-                      } else if (passwordController.text.isEmpty ||
-                          passwordController.text.length < 6 ||
-                          isAlphanumeric()) {
+                      } else if ((passwordController.text.isEmpty ||
+                              passwordController.text.length < 6) ||
+                          !Check.isAlphanumeric(passwordController.text)) {
                         controller.validate(passwordController, "password");
                       } else {
                         login();
@@ -66,12 +66,6 @@ class SignInPage extends GetView<TextFieldController> {
         ),
       ),
     );
-  }
-
-  bool isAlphanumeric() {
-    var s = RegExp(r'^[a-zA-Z0-9]+$');
-
-    return s.hasMatch(passwordController.text);
   }
 
   void login() async {

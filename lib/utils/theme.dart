@@ -1,4 +1,4 @@
-part of 'shared.dart';
+part of 'utils.dart';
 
 const double defMargin = 24;
 

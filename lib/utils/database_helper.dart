@@ -1,4 +1,4 @@
-part of 'helpers.dart';
+part of 'utils.dart';
 
 class DatabaseHelper {
   static final _databaseName = "db_product.db";

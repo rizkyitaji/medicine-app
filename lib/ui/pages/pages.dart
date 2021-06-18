@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:medicine/controllers/controllers.dart';
 import 'package:medicine/models/models.dart';
 import 'package:medicine/ui/widgets/widgets.dart';
-import 'package:medicine/shared/shared.dart';
+import 'package:medicine/utils/utils.dart';
 
 part 'main_page.dart';
 part 'sign_in_page.dart';
