@@ -22,13 +22,8 @@
 - Register
 - CRUD
 
-## Screenshots
-<!-- <p align="center">
-  <img width="200" src="https://user-images.githubusercontent.com/83572055/119666479-9a032500-be5f-11eb-91ba-cc612056e6e7.jpg">
-</p> -->
-
 ## Project Status
-Project is : _In Progress_.
+Project is : _Complete_.
 
 <!-- ## Contact
 Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me! -->
